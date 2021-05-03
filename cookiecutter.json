@@ -1,8 +1,8 @@
 {
-  "project_name": "test-project",
-  "project_verbose_name": "Test Project",
+  "project_name": "test-bot",
+  "project_verbose_name": "Test Bot",
   "project_domain": "myapp.com",
-  "organization": "wemake.services",
+  "organization": "yar.services",
 
   "_extensions": ["jinja2_git.GitExtension"],
   "_copy_without_render": [

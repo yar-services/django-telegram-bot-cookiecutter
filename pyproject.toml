@@ -8,12 +8,13 @@ style = "https://raw.githubusercontent.com/wemake-services/wemake-python-stylegu
 
 
 [tool.poetry]
-name = "wemake-django-template"
-description = "Bleeding edge django template focused on code quality and security"
+name = "django-telegram-bot-cookiecutter"
+description = "Bleeding edge `django2.2` template focused on developing telegram bots."
 version = "0.1.0"
 readme = "README.md"
 authors = [
-  "Nikita Sobolev <mail@sobolevn.me>"
+  "Nikita Sobolev <mail@sobolevn.me>",
+  "Yarfuo <yarfuo@gmail.com>"
 ]
 
 license = "MIT"
