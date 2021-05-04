@@ -78,7 +78,7 @@ See `dotenv-linter <https://github.com/wemake-services/dotenv-linter>`_ docs.
 
 .. code:: bash
 
-  dotenv-linter config/.env config/.env.template
+  dotenv-linter config/.env
 
 
 polint and dennis

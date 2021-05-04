@@ -29,7 +29,7 @@ run_ci () {
   touch '/var/www/django/static/.perm' && rm -f '/var/www/django/static/.perm'
 
   # Checking `.env` files:
-  dotenv-linter config/.env config/.env.template
+  dotenv-linter config/.env
 
   # Running linting for all python files in the project:
   flake8 .
