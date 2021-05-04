@@ -3,7 +3,7 @@
   "project_verbose_name": "Test Bot",
   "project_domain": "myapp.com",
   "organization": "yar.services",
-  "bot_token": "958663513:AAHBF1f-SmjcYmYTC99iSoK11_I9pMJIUBw",
+  "bot_token": null,
   "_extensions": ["jinja2_git.GitExtension", "cookiecutter.extensions.RandomStringExtension"],
   "_copy_without_render": [
     ".venv",
