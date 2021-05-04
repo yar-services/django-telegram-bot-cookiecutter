@@ -4,9 +4,18 @@ from django.conf import settings
 from django.http import HttpRequest, HttpResponse
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
+from telegram import Bot
 from telegram import Update
+from telegram.ext import Dispatcher
+from telegram.ext.dispatcher import DEFAULT_GROUP
 
-from server.apps.bot.dispatcher import dispatcher, bot
+from server.apps.bot.handlers import CALLBACKS
+
+# TODO: `Bot.__init__` has  token validation via telegram api
+bot = Bot(settings.TELEGRAM_TOKEN)
+dispatcher = Dispatcher(bot, None, 0, use_context=True)  # noqa
+dispatcher.groups = [DEFAULT_GROUP]
+dispatcher.handlers[DEFAULT_GROUP] = CALLBACKS
 
 
 @csrf_exempt
