@@ -18,12 +18,14 @@ from server.settings.components import BASE_DIR, config
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 SECRET_KEY = config('DJANGO_SECRET_KEY')
+TELEGRAM_TOKEN = config('TELEGRAM_TOKEN')
+TELEGRAM_WEBHOOK_SECRET = config('TELEGRAM_WEBHOOK_SECRET')
 
 # Application definition:
 
 INSTALLED_APPS: Tuple[str, ...] = (
     # Your apps go here:
-    'server.apps.main',
+    'server.apps.bot',
 
     # Default django apps:
     'django.contrib.auth',

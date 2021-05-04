@@ -20,6 +20,8 @@ import shutil
 import string
 
 # CHANGEME mark
+import cookiecutter.extensions
+
 CHANGEME = '__CHANGEME__'
 
 # Get the root project directory
@@ -35,46 +37,6 @@ Now you can start working on it:
 """
 
 
-def _get_random_string(length=50):
-    """
-    Returns a securely generated random string.
-
-    The default length of 12 with the a-z, A-Z, 0-9 character set returns
-    a 71-bit value. log_2((26+26+10)^12) =~ 71 bits
-
-    >>> secret = _get_random_string()
-    >>> len(secret)
-    50
-
-    """
-    punctuation = string.punctuation.replace(
-        '"', '',
-    ).replace(
-        "'", '',
-    ).replace(
-        '\\', '',
-    ).replace(
-        '$', '',  # see issue-271
-    )
-
-    chars = string.digits + string.ascii_letters + punctuation
-    return ''.join(secrets.choice(chars) for _ in range(length))
-
-
-def _create_secret_key(config_path):
-    # Generate a SECRET_KEY that matches the Django standard
-    secret_key = _get_random_string()
-
-    with open(config_path, 'r+') as config_file:
-        # Replace CHANGEME with SECRET_KEY
-        file_contents = config_file.read().replace(CHANGEME, secret_key, 1)
-
-        # Write the results to the file:
-        config_file.seek(0)
-        config_file.write(file_contents)
-        config_file.truncate()
-
-
 def print_futher_instuctions():
     """Shows user what to do next after project creation."""
     print(PROJECT_SUCCESS.format(PROJECT_NAME))  # noqa: WPS421
@@ -86,14 +48,6 @@ def copy_local_configuration():
 
     It is copied from ``.template`` files to the actual files.
     """
-    secret_template = os.path.join(
-        PROJECT_DIRECTORY, 'config', '.env.template',
-    )
-    secret_config = os.path.join(
-        PROJECT_DIRECTORY, 'config', '.env',
-    )
-    shutil.copyfile(secret_template, secret_config)
-    _create_secret_key(secret_config)
 
     # Local config:
     local_template = os.path.join(

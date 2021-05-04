@@ -1,5 +1,5 @@
 """
-This is a django-split-settings main file.
+This is a django-split-settings bot file.
 
 For more information read this:
 https://github.com/sobolevn/django-split-settings
