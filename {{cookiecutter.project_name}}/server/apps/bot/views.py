@@ -44,7 +44,6 @@ def handle_set_webhook(request: HttpRequest) -> HttpResponse:
     Used manually to set webhook. This implemented as endpoint,
     because with command we can't get current domain.
     """
-
     webhook_url = request.build_absolute_uri(reverse("bot:handle-webhook"))
     webhook_url_with_secret = f"%s?secret=%s" % (
         webhook_url, settings.TELEGRAM_WEBHOOK_SECRET

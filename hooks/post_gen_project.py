@@ -15,12 +15,9 @@ https://github.com/pydanny/cookiecutter-django
 """
 
 import os
-import secrets
 import shutil
-import string
 
 # CHANGEME mark
-import cookiecutter.extensions
 
 CHANGEME = '__CHANGEME__'
 
@@ -48,7 +45,6 @@ def copy_local_configuration():
 
     It is copied from ``.template`` files to the actual files.
     """
-
     # Local config:
     local_template = os.path.join(
         PROJECT_DIRECTORY,
